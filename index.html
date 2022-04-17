@@ -1,107 +1,686 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>EbiggerR</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aubrey">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bevan">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
-    <!--favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="/assets/favicon.ico" type="image/svg+xml">
+      <link rel="icon" href="/assets/favicon.ico" type="image/png">
+    <title>Alexious Yong - Résumé</title>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+      <script
+              src="https://code.jquery.com/jquery-3.6.0.min.js"
+              integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+              crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC|Nunito+Sans:400,700&display=swap" rel="stylesheet">
+    <style>:root {
+  --text_color: #fff;
+  --title_bg: #000;
+  --bg: #fff;
+  --card_bg: #fff;
+  --paragraph_color: #000;
+}
+.dark-mode {
+  --text_color: #FF7F50;
+  --title_bg: #000;
+  --bg: #000;
+  --card_bg: #000;
+  --paragraph_color: #a8a8a8;
+}
+.clear-margin {
+  margin: 0;
+}
+.space-top {
+  margin-top: 10px;
+}
+.space-right {
+  margin-right: 10px;
+}
+.icon-left {
+  margin-right: 5px;
+}
+.icon-right {
+  margin-left: 5px;
+}
+.labels {
+  word-spacing: 5px;
+  line-height: 2;
+}
+.label-keyword {
+  display: inline-block;
+  background: #7eb0db;
+  color: white;
+  font-size: 0.9em;
+  padding: 5px;
+  border: 1px solid #357ebd;
+}
+.link-disguise {
+  color: inherit;
+}
+.link-disguise:hover {
+  color: inherit;
+}
+.clear-margin-sm {
+  margin-bottom: 0;
+}
+body {
+  font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, 'Noto Sans SC', sans-serif;
+  color: var(--paragraph_color);
+  font-size: 16px;
+  background-color: var(--bg);
+}
+.text-bolder {
+  font-weight: bold;
+}
+.enumeration:last-child:after {
+  content: '' !important;
+}
+.name-and-profession .name {
+  font-size: 2.8rem;
+  margin-bottom: 0;
+}
+.name-and-profession .job {
+  margin-bottom: 0.5rem;
+}
+@media only screen {
+  .container {
+    display: grid;
+    grid-template-columns: auto 15fr 50fr auto;
+  }
+  .container .page {
+    max-width: 50em;
+  }
+}
+@media (max-width: 768px) {
+  ul {
+    padding-left: 25px;
+  }
+  .container {
+    display: block;
+  }
+  .card {
+    padding: 1em !important;
+  }
+  .background-details {
+    display: block;
+  }
+  .background-details .icon {
+    max-width: inherit;
+    min-width: inherit;
+    text-align: left;
+  }
+  .background-details .icon,
+  .background-details .info {
+    display: block;
+    padding: 10px 0;
+  }
+  .background-details .title {
+    display: none;
+  }
+  .card-nested {
+    padding: 5px 0;
+  }
+}
+.profile-card {
+  width: 100%;
+  text-align: left;
+}
+.profile-pic {
+  display: block;
+  padding: 1rem;
+}
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+}
+.contact-details .detail {
+  display: block;
+  line-height: 2;
+}
+.contact-details .detail .icon {
+  padding-right: 7px;
+  color: #888;
+}
+.contact-details .detail .info {
+  font-size: 0.8em;
+}
+.social-links {
+  margin-top: 1.5rem;
+}
+.social-link {
+  padding: 0 0.6rem;
+  color: inherit;
+  opacity: 0.7;
+}
+.social-link:hover,
+.social-link:focus {
+  opacity: 1;
+}
+.social-link:first-child {
+  padding-left: 0;
+}
+.social-link:last-child {
+  padding-right: 0;
+}
+.social-link > * {
+  vertical-align: middle;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:not(.icon) {
+  border-bottom: 1px dashed #0005;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+.background-card h4 {
+  line-height: 1.2;
+  font-size: 1em;
+}
+.background-card h4 .title {
+  background: var(--title_bg) !important;
+  color: var(--text_color) !important;
+  display: inline-block;
+  padding: 2px 12px 0 3px;
+  font-weight: bold;
+}
+.background-card h4:not(:first-child) {
+  margin-top: 2em;
+}
+.content {
+  line-height: 1.5;
+}
+.card {
+  background: var(--card_bg);
+  padding: 2em 3.5em;
+}
+.card-nested {
+  padding: 0.8rem 0 0.8rem 2rem;
+}
+.card-nested.relax {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.card-wrapper {
+  padding: 5px;
+}
+.enumeration:not(:last-child):after {
+  content: ", ";
+}
+.enumeration:last-child:after {
+  content: ".";
+}
+.github-stars {
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+.projects {
+  padding: 1rem 0;
+}
+.projects .text-muted {
+  margin-bottom: 0.4rem;
+}
+.projects .icon {
+  margin-right: 2px;
+}
+.px10 {
+  height: 10px;
+}
+.skill-table {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-gap: 1.5rem 1rem;
+}
+.skill-table .name {
+  font-weight: bold;
+  text-align: right;
+}
+.project-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem 1rem;
+}
+.print-only {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .profile-card,
+  .contact-details,
+  .profile-pic {
+    display: block;
+    text-align: center;
+  }
+  .card-nested {
+    padding-left: 0;
+  }
+  .project-table {
+    display: block;
+  }
+}
+.card-skills {
+  position: relative;
+}
+.skill-info {
+  margin-left: 20px;
+}
+@media (max-width: 768px) {
+  .quote {
+    font-size: inherit;
+  }
+}
+@media print {
+  .name-and-profession .name {
+    margin-top: -2rem;
+  }
+  .page {
+    margin-top: -4rem;
+  }
+  .social-links {
+    margin-top: 0.5rem;
+  }
+  body {
+    font-size: 10pt;
+  }
+  a[href]:after {
+    content: none !important;
+  }
+  .pagebreak {
+    page-break-before: always;
+  }
+  .card {
+    border: 0;
+    padding: 0;
+  }
+  .text-muted {
+    color: #777 !important;
+  }
+  .text-muted * {
+    color: inherit !important;
+  }
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+  .contact-details .detail .icon {
+    color: #888 !important;
+  }
+  .labels {
+    display: inline;
+  }
+  .skill-info {
+    margin-left: 0;
+  }
+  .profile-card {
+    text-align: center;
+  }
+  .print-only {
+    display: inherit;
+  }
+  .no-print {
+    display: none;
+  }
+  .project-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.8rem 1rem;
+  }
+  .highlight {
+    margin-top: -0.3rem;
+  }
+  blockquote {
+    font-size: 100%;
+  }
+  .card-nested {
+    padding: 0.1rem 0 0.1rem 1rem;
+  }
+  .card-nested.relax {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .skill-table {
+    grid-gap: 0.8rem 0.5rem;
+  }
+  .background-card h4:not(:first-child) {
+    margin-top: 1em;
+  }
+  #work-projects-group {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 2fr 4fr;
+    page-break-after: always;
+  }
+}
+</style>
+  </head>
 
-<body>
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark portfolio-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#" style="font-family: 'Melody Santiago Sans Variation1',sans-serif;font-size: 30px;">EbiggerR</a>
-        </div>
-    </nav>
-    <main class="page landing-page bg-dark">
-        <section class="portfolio-block block-intro bg-dark">
-            <div class="container">
-                <div class="avatar" style="background-image:url(&quot;assets/img/avatars/1970-01-18 07.10.04 1.jpg&quot;);"></div>
-                    <div class="about-me text-white">
-                        <p>Hi! <span id="printName"></span></p>
-                        <a class="btn btn-outline-info" role="button" href="https://www.linkedin.com/in/alexious-yong/" target="_blank">Know More About Me</a>
-                    </div>
-            </div>
-        </section>
-        <section class="portfolio-block photography">
-            <div class="container">
-                <div class="row no-gutters">
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img src="assets/img/c3.jpg" width="400"><img src="assets/img/bw2.jpg" width="425"></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img src="assets/img/c2.jpg" width="400"><img src="assets/img/nature/gd1.png" width="400"><img src="assets/img/c1.jpg" width="400"></div>
-                    <div class="col-md-6 col-lg-4 item zoom-on-hover"><img src="assets/img/bw5.jpg" width="400"><img src="assets/img/bw4.jpg" width="425"></div>
+  <body itemscope itemtype="http://schema.org/Person">
+    
+    <div class="container">
+      <section class="row">
+        <div class="card-wrapper">
+          <div class="card">
+            <div class="profile-card">
+                <!--<div class="profile-pic">
+                  <img class="media-object img-circle center-block"  data-src="holder.js/100x100"
+                    alt="Alexious Yong" src="https://antfu.me/avatar.png" itemprop="image">
                 </div>
-            </div>
-        </section>
-        <!--<section class="portfolio-block call-to-action">
-            <div class="container">
-                <div class="d-flex justify-content-center align-items-center content text-white">
-                    <h3><span id="directIG"></span></h3><br><a class="btn btn-outline-info" role="button" href="https://www.instagram.com/ebiggerr" target="_blank">See More</a></div>
-            </div>
-        </section>-->
-        <section class="portfolio-block skills bg-dark">
-            <div class="container">
-                <div class="heading text-white text-lg-center" style="font-family: 'Melody Santiago Sans Variation1',sans-serif;">
-                    <h2>Capabilities</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <img class="card-img-top" src="assets/img/sd.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Software Developer</h3>
-                                <p class="card-text">Major in Computer Science (Software Development)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <img class="card-img-top" src="assets/img/gD.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Graphic Design</h3>
-                                <p class="card-text">Capable in using tools like Illustrator and Photoshop.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <img class="card-img-top" src="assets/img/mAs.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h3 class="card-title">Stills and Motion</h3>
-                                <p class="card-text">A photography and videography lover. Owns a few film cameras.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="page-footer bg-light">
-        <div class="container">
-            <div><a>Contact Me Using</a></div>
-            <div class="social-icons"><a href="https://www.facebook.com/ebiggerr" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="https://www.instagram.com/ebiggerr" target="_blank"><i class="icon ion-social-instagram-outline"></i></a><a href="https://www.linkedin.com/in/alexious-yong/" target="_blank"><i class="icon ion-social-linkedin-outline"></i></a></div>
-        </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/typeit.modern.min.js"></script>
-    <script src="assets/js/typeit.js"></script>
-</body>
+                -->
+                <div class="contact-details">
+                  <div class="name-and-profession">
+                    <h3 class="text-bolder name" itemprop="name"> Alexious Yong</h3>
+                    <div class="text-muted job" itemprop="jobTitle">Software Engineer</div>
+                  </div>
 
+                    <div class="detail">
+                      <span class="info">
+                        <a href="mailto:alexiousyong@gmail.com" class="link-disguise" itemprop="email" target="_blank">alexiousyong@gmail.com</a>
+                      </span>
+                    </div>
+
+
+                    <div class="detail">
+                        <span class="info">
+                          Ipoh, Perak,
+                          MY
+                        </span>
+                    </div>
+                </div>
+
+              <div class="social-links">
+                  <a class="social-link icon" href="https://github.com/ebiggerr" target="_blank">
+                    <span class="iconify" data-icon="ri:github-fill"></span>
+                    <!--<span class="social-link-text print-only">ebiggerr</span>-->
+                  </a>
+                  <a class="social-link icon" href="https://www.linkedin.com/in/alexious-yong" target="_blank">
+                    <span class="iconify" data-icon="ri:linkedin-box-fill"></span>
+                    <!--<span class="social-link-text print-only">Alexious Yong</span>-->
+                  </a>
+              </div>
+                <div class="social-links" id="themeIcon">
+                    <button type="button"  id="theme_toggler" class="btn btn-secondary">
+                        <i class="bi"></i>
+                        <span id="theme_toggler_text" class="visually-hidden">Dark Mode</span>
+                    </button>
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="row page">
+        <div class="card-wrapper">
+          <div class="card background-card">
+
+            <h4 id="about"></span> <span class="title">About</span> </h4>
+            <div class="card-nested" itemprop="description">
+              <p> My name is Alexious Yong, a computer science student and a software engineer wannabe. I loves web backend development and data engineering.<br><br>I am an also an open-source enthusiast. I hope that one day I can create something that can contribute back to the community through collaboration or invention, it can be a tool or library.<br><br>Outside of programming, I enjoy doing photography and listen to music. I treasure the feeling when capturing meaningful moments and able to look back to the memories through photographs. </p>
+            </div>
+
+            <div id="work-projects-group">
+              <div id="projects">
+                <h4><span class="title">Projects</span></h4>
+                <div class="list-unstyled projects">
+                  <div class="project-table">
+                    <li class="card-nested ">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm" itemprop="award">
+                          <strong>Data Cleaning and Analytics using Tableau Dashboards.</strong>&nbsp
+                            <a href="https://github.com/ebiggerr/data_engineering" class='icon' target="_blank">
+                              <span class="iconify" data-icon="ri:github-fill"></span>
+                            </a>
+                            <a href="https://public.tableau.com/app/profile/ebiggerr.yong/viz/DevKakiSalarySurveyDashboard/Dashboard1" class='icon' target="_blank">
+                              <span class="iconify" data-icon="ri:arrow-right-up-line"></span>
+                            </a>
+                        </p>
+                        <p class="text-muted">
+                          <small> Data cleaning project using a public dataset from https://www.developerkaki.my/ </small>
+                        </p>
+                          <p class="github-stars">
+                            <span class="iconify" data-icon="ri:star-fill"></span>
+                            <span class="stars" data-gh-api="https://api.github.com/repos/ebiggerr/data_engineering">0</span>
+                          </p>
+                      </div>
+                    </li>
+                    <li class="card-nested ">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm" itemprop="award">
+                          <strong>S-IMS Web API</strong>&nbsp
+                            <a href="https://github.com/ebiggerr/sims-backend" class='icon' target="_blank">
+                              <span class="iconify" data-icon="ri:github-fill"></span>
+                            </a>
+                        </p>
+                        <p class="text-muted">
+                          <small> Smart Inventory Management System (S-IMS) backend Web API built using Spring Boot and PostgreSQL. </small>
+                        </p>
+                          <p class="github-stars">
+                            <span class="iconify" data-icon="ri:star-fill"></span>
+                            <span class="stars" data-gh-api="https://api.github.com/repos/ebiggerr/sims-backend">0</span>
+                          </p>
+                      </div>
+                    </li>
+                    <li class="card-nested ">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm" itemprop="award">
+                          <strong>URL Shortener</strong>&nbsp
+                            <a href="https://github.com/ebiggerr/cSharp_URL_Shortener" class='icon' target="_blank">
+                              <span class="iconify" data-icon="ri:github-fill"></span>
+                            </a>
+                        </p>
+                        <p class="text-muted">
+                          <small> Simple URL shortener built using ASP.NET Core. </small>
+                        </p>
+                          <p class="github-stars">
+                            <span class="iconify" data-icon="ri:star-fill"></span>
+                            <span class="stars" data-gh-api="https://api.github.com/repos/ebiggerr/cSharp_URL_Shortener">0</span>
+                          </p>
+                      </div>
+                    </li>
+                  </div>
+                    <li class="card-nested text-muted">
+                      <a href="https://github.com/ebiggerr" target="_blank">More Projects...</a>
+                    </li>
+                  <div class='px10'></div>
+                </div>
+              </div>
+
+              <div id="work-experience">
+                <h4> <span class="title">Work Experience</span> </h4>
+                <ul class="list-unstyled">
+                    <li class="card-nested relax">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong><a href="https://www.agilent.com/" target="_blank">Agilent Technologies LDA Malaysia</a></strong>
+                          <span class="text-muted" style="margin-left: 0.3em">Intern</span>
+                        </p>
+                        <p class="text-muted">
+                          <small>
+                            <span class="space-right"> Oct 2021 - Apr 2022 | Penang, Malaysia</span>
+                          </small>
+                        </p>
+                        <p>In Software Solutions team</p>
+                          <ul class='highlight'>
+                              <li> Contributed to the development of new feature and enhancement of a few web applications and APIs using ASP.NET Core. </li>
+                              <li> Worked with relational database server using SQL. </li>
+                              <li> Delivered improvements to the internal tooling to improve efficiency. </li>
+                              <li> Worked with automation includes SAP, VBS scripting, Excel macro and batch scripting. </li>
+                              <li> Worked on developing new package and improving existing SSIS packages. </li>
+                          </ul>
+                      </div>
+
+                    </li>
+                    <li class="card-nested relax">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong><a href="https://www.infinitilab.com/" target="_blank">InfinitiLab</a></strong>
+                          <span class="text-muted" style="margin-left: 0.3em">Software Engineer Intern</span>
+                        </p>
+                        <p class="text-muted">
+                          <small>
+                            <span class="space-right"> Jul 2021 - Sep 2021 | Selangor, Malaysia</span>
+                          </small>
+                        </p>
+                        <p>In one of the software engineering teams.</p>
+                          <ul class='highlight'>
+                              <li> Contributed to the development of a insurance-related web application built using ASP.NET Core and Angular. </li>
+                              <li> Contributed to a data migration project which involves data cleansing and data migration using tools such as Tableau Prep Builder and Excel. </li>
+                          </ul>
+                      </div>
+
+                    </li>
+                </ul>
+              </div>
+            </div>
+
+            <h4 id="skills"><span class="title">Stacks</span> </h4>
+            <div class="card-nested" itemprop="description">
+              <div class="skill-table">
+                    <div class='name'>Frontend</div> 
+                    <div>React</div>
+                    <div class='name'>Backend</div> 
+                    <div>Spring Boot, ASP.NET Core, PostgreSQL, Docker</div>
+                    <div class='name'>DevOps</div> 
+                    <div>GitHub Actions, Jenkins, Travis CI</div>
+                    <div class='name'>Languages</div> 
+                    <div>Java, C#, Go, Typescript</div>
+              </div>
+            </div>
+            <div class='px10'></div>
+
+            <div id="education">
+              <h4><span class="title">Education</span></h4>
+              <ul class="list-unstyled">
+                  <li class="card-nested">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong> Software Development, Bachelor of Computer Science</strong>,&nbsp;
+                        University of Sultan Zainal Abidin
+                      </p>
+                      <p class="text-muted clear-margin-sm">
+                        <small>
+                          Oct 2018 -  Currently Pursuing 
+                        </small>
+                      </p>
+                      <div>This is where I fall in love with programming and web backend development.</div>
+                      <i></i>
+                      <div class="space-top labels">
+                        
+                      </div>
+                    </div>
+                  </li>
+                  <li class="card-nested">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong> SPM and STPM, Science stream</strong>,&nbsp;
+                        SMJK SAM TET
+                      </p>
+                      <p class="text-muted clear-margin-sm">
+                        <small>
+                          Jan 2011 -  Dec 2017 
+                        </small>
+                      </p>
+                      <div></div>
+                      <i></i>
+                      <div class="space-top labels">
+                        
+                      </div>
+                    </div>
+                  </li>
+              </ul>
+            </div>
+
+
+
+
+
+            <h4 id="interests"><span class="title">Interests</span> </h4>
+            <ul class="list-unstyled">
+                <li class="card-nested">
+                  <p>
+                    <strong>Photography</strong>
+                  </p>
+
+                  <div class="space-top labels">
+                      <span class="label label-keyword">135 film</span>
+                      <span class="label label-keyword">Digital</span>
+                  </div>
+                </li>
+            </ul>
+
+
+            <h4 id="languages"><span class="title">Languages</span> </h4>
+            <p class="card-nested">
+                <span class="enumeration"><strong>Chinese</strong> (Native speaker)</span>
+                <span class="enumeration"><strong>English</strong> (Conversational)</span>
+                <span class="enumeration"><strong>Bahasa Malaysia</strong> (Conversational)</span>
+                <span class="enumeration"><strong>Korean</strong> (Conversational)</span>
+            </p>
+
+              <div style="text-align:center">
+                  <div style="opacity:0.7; font-size:1.2rem;margin-top:1rem;">Made with ❤️</div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    
+    <script>
+      async function updateStars(){
+        await Promise.all(
+          Array.from(document.querySelectorAll('[data-gh-api]'))
+            .map(async (e) => {
+              const api = e.dataset.ghApi
+              const r = await fetch(api)
+              const json = await r.json()
+              if (json.stargazers_count)
+                e.innerText = json.stargazers_count
+              console.info(`${api} - ${json.stargazers_count}`)
+            })
+        )
+      }
+      window.addEventListener('load', updateStars)
+
+      //page_load
+      if(localStorage.getItem('theme')){
+          document.getElementById('theme_toggler_text').innerHTML = 'Light Mode';
+          document.body.classList.toggle('dark-mode');
+          $('#themeIcon').find("i").toggleClass("bi-sun");
+      }
+      else{
+          document.getElementById('theme_toggler_text').innerHTML = 'Dark Mode';
+          $('#themeIcon').find("i").toggleClass("bi-moon");
+      }
+
+      //listen to click event
+      let theme_toggler = document.querySelector('#theme_toggler');
+
+      theme_toggler.addEventListener('click', function(){
+          if(!localStorage.getItem('theme')){
+              $('#themeIcon').find("i").removeClass("bi-moon").toggleClass("bi-sun");
+              document.body.classList.toggle('dark-mode');
+              localStorage.setItem('theme','dark');
+              updateTogglerText();
+          }else{
+              $('#themeIcon').find("i").removeClass("bi-sun").toggleClass("bi-moon");
+              document.body.classList.toggle('dark-mode');
+              localStorage.clear();
+              updateTogglerText();
+          }
+      })
+
+      function updateTogglerText() {
+          if (localStorage.getItem('theme')) {
+              document.getElementById('theme_toggler_text').innerHTML = 'Light Mode';
+          } else {
+              document.getElementById('theme_toggler_text').innerHTML = 'Dark Mode';
+          }
+      }
+    </script>
+  </body>
 </html>
